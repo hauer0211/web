@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hauer</title>
+</head>
+<body>
+    <h1 id="dedashi">music</h1>
+    <h2 id="list">list</h2>
+    <div id="form-main">
+    <div id="form-div">
+    <form class="form" id="form1">
+    <div class="box " id="box">
+    <table border="4">
+        <tr>
+            <th>singer</th>
+            <th>song</th>
+            <th>releas days</th>
+            <th>link</th>
+        </tr>
+        {% for song in songs %}
+        <tr>
+            <td>{{ song.singer }}</td>
+            <td>{{ song.song }}</td>
+            <td>{{ song.releas_days }}</td>
+            <td><input type="button" onclick="location.href='{{ song.link }}'" value="リンク" id="link"></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+<input type="button" onclick="history.back()" value="戻る" id="backbutton">
+<style>
+    html {
+        background-color: #222729
+
+    }
+.box{
+width: 460px;
+height: 400px;
+border: 1px soild #000;
+overflow-y: scroll;
+
+position: absolute;
+top: 50%;
+transform: translateY(-50%)   
+}
+#box{
+background-color: rgba(251, 251, 251, 0.433);
+
+}
+
+#form-main{
+width:100%;
+float:left;
+padding-top:0px;
+}
+
+#form-div {
+background-color:rgba(72,72,72,0.4);
+padding-left:60px;
+padding-right:60px;
+padding-top:300px;
+padding-bottom:150px;
+width: 430px;
+float: left;
+left: 50%;
+position: absolute;
+margin-top:0px;
+margin-left: -600px;
+}
+
+#backbutton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(900%);
+
+}
+#dedashi {
+    color: rgb(22, 186, 22);
+}
+#list {
+    color: rgb(22, 186, 22);;
+}
+</style>
+</body>
+</html>

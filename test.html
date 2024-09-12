@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hauer</title>
+</head>
+<body>
+   
+    {% for book in books %}
+    <div id="searchbox">
+        <form action="http://www.google.co.jp/search" method="get">
+        <input type="search" name="search" placeholder="キーワードを入力">
+        <input type="submit" name="submit" value="検索">
+        </form>
+        </div>
+    {% endfor %} 
+    
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hauer</title>
+</head>
+<body>
+    
+    <h1 id="dedashi">clothes</h1>
+    <h2 id="list">RECOMMEND</h2>
+    <div id="form-main">
+        <div id="form-div">
+          <form class="form" id="form1">
+         <div class="box" id="box"> 
+        <table border="1">
+            
+            <tr>
+              
+            
+                <th>maker</th>
+                <th>size</th>
+                <th>release days</th>
+                <th>picture</th>
+                <th>link</th>
+
+                
+            
+            </tr>
+           
+            {% for book in books %}
+            
+                <tr>
+                    <td>{{ book.singer }}</td>
+                    <td>{{ book.song }}</td>
+                    <td>{{ book.releas_days }}</td> 
+                    <td><img src="{{ url_for('static', filename=book.picture) }}" alt="Book Image" style="max-width: 300px; height: 300px;">
+                    </td> 
+                    <td>
+                        <input type="button" onclick="location.href='{{ book.link }}'" value="リンク" id="link">
+                    </td>
+
+                </tr>     
+            {% endfor %} 
+            
+                
+            
+        </table>
+
+    </div>
+
+<div id="table-container">
+    <table border="1" id="table">
+            <tr id="tr">
+                <th><input type="button" onclick="location.href='homepage.html'" value="RECOMMEND" id="RECOMMEND"></th>
+                <th><input type="button" onclick="location.href='MAN.html'" value="MAN" id="MAN"></th>
+                <th><input type="button" onclick="location.href='WOMENS.html.html'" value="WOMENS" id="WOMENS"></th>
+                <th><input type="button" onclick="location.href='SHOES.html'" value="SHOES" id="SHOES"></th>
+                <th><input type="button" onclick="location.href='ACCESSORY.html'" value="ACCESSORY" id="ACCESSORY"></th>
+            </tr>
+    </table> 
+</div>
+
+        
+
+<input type="button" onclick="history.back()" value="戻る" id="modoru">
+
+   
+    <div id="form-main2">
+        <div id="form-div2"></div>
+    </div> 
+    <div id="genre">
+        <p>ジャンル</p>
+        <tr>
+            <li><th><input type="button" value="シャツ" id="hiphop" onclick="location.href='hiphop.html'"></th></li>
+            <li><th><input type="button" value="T-シャツ" id="hop" onclick="location.href='hop.html'"></th></li>
+            <li><th><input type="button" value="ジーンズ" id="jazz" onclick="location='jazz.html'"></th></li>
+            <li><th><input type="button" value="パンズ" id="pans" onclick="location='pans.html'"></th></li>
+            <li><th><input type="button" value="ハーフパンツ" id="halfpans" onclick="location='halfpans.html'"></th></li>
+            <li><th><input type="button" value="ポロシャツ" id="poloshirt" onclick="location='poloshirt'"></th></li>
+            <li><th><input type="button" value="ジャケット" id="jaket" onclick="location='jaket.html'"></th></li>
+            <li><th><input type="button" value="カーディガン" id="cardigan" onclick="location='cardigan.html'"></th></li>
+        </tr>
+    </div>   
+<div> 
+<input type="button" onclick="location.href='Setuppage.html'" value="SETUP" id="setup">
+</div>
+
+</body> 
+<style>
+   @import url(https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E6%8E%A5%E5%86%99%E3%81%AE%E9%BB%92%E3%81%84%E3%83%86%E3%82%AD%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB-gM8igOIP5MA);
+   html{
+    background-image: url(/static/image/background2.jpg);
+   }
+    
+
+
+
+#ichiran {
+font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+float:right;
+width: 10%;
+border: #fbfbfb solid 2px;
+cursor:pointer;
+background-color: #1e2325;
+color:white;
+font-size:10px;
+padding-top:2px;
+padding-bottom:2px;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+margin-top:-4px;
+font-weight:700;
+}
+
+#form-main{
+width:100%;
+float:left;
+padding-top:0px;
+position: absolute;
+top: 20%;
+left: -8%;
+}
+
+#form-div {
+background-color:rgba(247, 226, 195, 0.4);
+padding-left:200px;
+padding-right:60px;
+padding-top:300px;
+padding-bottom:100px;
+width: 540px;
+float: left;
+left: 50%;
+position: absolute;
+margin-top:0px;
+margin-left: -560px;
+}
+
+.box{
+
+
+width: 800px;
+height: 400px;
+border: 1px soild #000;
+overflow-y: scroll;
+
+position: absolute;
+top: 0%;
+left: 0%;
+
+
+}
+
+
+
+#modoru{
+position: absolute;
+bottom: -10%;
+left: 50%;
+transform: translateY(-400px);
+transform: translateX(-400px);
+}
+
+#dedashi {
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+   font-size: 50px;
+   position: absolute;
+   
+   top: -2%;
+   left: 5%;
+   
+  
+
+}
+
+#list{
+    color: rgb(0, 0, 0);
+    font-weight: 90px;
+    font-size: 25px;
+    position: absolute;
+    top: 10%;
+   left: 5%;
+   
+   
+}
+
+#genre {
+    position: absolute;
+    top: -2%;
+    left: 50%;
+    transform: translateX(610%);
+    
+
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-size: 30px;
+
+    list-style: none;
+}
+
+#jazz {
+    border-radius: 100vh;
+}
+#hiphop {
+    border-radius: 100vh;
+}
+#hop {
+    border-radius: 100vh;
+}
+
+#link {
+    border-radius: 100vh;
+}
+
+#pans {
+    border-radius: 100vh;
+}
+
+#cardigan {
+    border-radius: 100vh;
+}
+
+#jaket {
+    border-radius: 100vh;
+}
+
+#poloshirt {
+    border-radius: 100vh;
+}
+
+#halfpans {
+    border-radius: 100vh;
+}
+
+#cardigan {
+    border-radius: 100vh;
+}
+
+#setup {
+    border-radius: 100vh;
+    position: absolute;
+    left: 87%;
+    top: 100%;
+    padding: 20px;
+}
+
+#form-main2{
+width:100%;
+float:left;
+padding-top:0px;
+}
+
+#form-div2{
+background-color:rgba(247, 226, 195, 0.4);
+padding-left:12px;
+padding-right:12px;
+padding-top:400px;
+padding-bottom:100px;
+width: 190px;
+float: left;
+left: 50%;
+position: absolute;
+margin-top:-300px;
+margin-left: 700px;
+}
+
+#searchbox{
+    position: absolute;
+    top: -24%;
+    right: 0%;
+    
+    transform: translateX(910px);
+    
+}
+
+#table {
+    border: none;
+            width: 900px;
+            height: 40px;
+            
+            
+            border-collapse: collapse; /* 枠線を結合 */
+            position: absolute;
+            top: -25%;
+            left: 37%;
+            
+        }
+
+#RECOMMEND {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 12px;
+    font-size: large;
+}
+#MAN {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 12px;
+    font-size: large;
+}
+
+#WOMENS { 
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 12px;
+    font-size: large;
+}
+
+#SHOES {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 12px;
+    font-size: large;
+}
+
+#ACCESSORY {
+    background-color: rgba(255, 255, 255, 0.5);
+   padding: 12px;
+   font-size: large;
+}
+
+
+
+</style>
+</html>

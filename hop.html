@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hauer</title>
+</head>
+<body>
+    <h1 id="dedashi">hop</h1>
+    <h2 id="list">list</h2>
+    <div id="form-main">
+    <div id="form-div">
+    <form class="form" id="form1">
+    <div class="box" id="box">
+    <table border="4">
+    <tr>
+        <th>singer</th>
+        <th>song</th>
+        <th>releas_days</th>
+        <th>link</th>
+    </tr>
+    {% for hop in hops %}
+    <tr>
+        <td>{{hop.singer}}</td>
+        <td>{{hop.song}}</td>
+        <td>{{hop.releas_days}}</td>
+        <td><input type="button" onclick="location.href='{{hop.link}}'" value="リンク"></td>
+    </tr>
+    {% endfor %}
+    </div>
+    </table>
+    <input type="button" onclick="history.back()" value="戻る" id="modoru">
+</body>
+
+<style>
+html {
+    background-color: #222729;
+}
+
+#list {
+        color: rgb(5, 179, 20);
+        font-weight: 900;
+        font-size: 30px;
+        position: absolute;
+   
+        top: 0%;
+        left: 5%;
+    }
+
+    #dedashi {
+        color: rgb(5, 179, 20);
+        font-weight: 900;
+        font-size: 30px;
+        position: absolute;
+   
+        top: 0%;
+        left: 5%;
+    }
+
+    #form-main{
+width:100%;
+float:left;
+padding-top:0px;
+position: absolute;
+top: 20%;
+left: 0%;
+}
+#form-div {
+background-color:rgba(35, 34, 34, 0.4);
+padding-left:60px;
+padding-right:60px;
+padding-top:300px;
+padding-bottom:100px;
+width: 450px;
+float: left;
+left: 50%;
+position: absolute;
+margin-top:0px;
+margin-left: -760px;
+}
+.box{
+
+
+width: 500px;
+height: 300px;
+border: 1px soild #000;
+overflow-y: scroll;
+
+position: absolute;
+top: 50%;
+transform: translateY(-60%)   
+}
+#box{
+background-color: rgba(251, 251, 251, 0.433);
+
+}
+#form-div2{
+background-color:rgba(72,72,72,0.4);
+padding-left:12px;
+padding-right:12px;
+padding-top:400px;
+padding-bottom:100px;
+width: 190px;
+float: left;
+left: 50%;
+position: absolute;
+margin-top:-300px;
+margin-left: 700px;
+}
+#modoru{
+position: absolute;
+top: 50%;
+transform: translateY(500%);
+}
+</style>
+
+</html>
